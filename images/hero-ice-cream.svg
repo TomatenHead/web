@@ -1,0 +1,21 @@
+<svg width="640" height="480" viewBox="0 0 640 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="coneGradient" x1="320" y1="160" x2="320" y2="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F9D0B5"/>
+      <stop offset="100%" stop-color="#EC9B64"/>
+    </linearGradient>
+    <linearGradient id="pinkGradient" x1="320" y1="80" x2="320" y2="220" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F7A8B8"/>
+      <stop offset="100%" stop-color="#FCD5E0"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="480" rx="48" fill="#FDF4FF"/>
+  <path d="M267 234C214 273 197 341 211 397H429C444 341 432 271 386 235C340 199 294 206 267 234Z" fill="#E6E0FF"/>
+  <path d="M215 366L295 446L345 392L265 312L215 366Z" fill="url(#coneGradient)"/>
+  <path d="M219 274C231 256 252 247 285 260C318 273 332 297 328 317C324 337 301 357 269 352C237 347 211 306 219 274Z" fill="url(#pinkGradient)"/>
+  <path d="M316 215C334 200 362 200 384 214C406 228 415 254 407 278C399 302 374 323 346 322C318 321 295 299 294 270C293 241 298 227 316 215Z" fill="#FFF1F7"/>
+  <circle cx="318" cy="98" r="60" fill="#FEE2E6"/>
+  <circle cx="302" cy="88" r="20" fill="#FBCFE8"/>
+  <circle cx="334" cy="76" r="14" fill="#F472B6"/>
+  <circle cx="286" cy="112" r="12" fill="#FDA4AF"/>
+</svg>
