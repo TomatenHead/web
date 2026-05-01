@@ -124,78 +124,51 @@ img {
     transform: translateY(-1px);
 }
 
-.scroll-container {
-    position: relative;
-    overflow: hidden;
-}
-
-.card-grid.scrollable {
-    display: flex;
-    overflow-x: auto;
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.5rem;
-    padding-bottom: 1rem;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    padding-inline: 1rem;
-}
-
-.scroll-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    border: none;
-    background: rgba(255, 255, 255, 0.96);
-    color: #5b3b82;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    box-shadow: 0 12px 24px rgba(91, 59, 130, 0.16);
-    cursor: pointer;
-    font-size: 1.35rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-}
-
-.scroll-btn:hover {
-    background: #ffffff;
-}
-
-.scroll-btn-left {
-    left: 0.5rem;
-}
-
-.scroll-btn-right {
-    right: 0.5rem;
-}
-
-.card-grid.scrollable::-webkit-scrollbar {
-    height: 0.75rem;
-}
-
-.card-grid.scrollable::-webkit-scrollbar-thumb {
-    background: rgba(109, 62, 111, 0.25);
-    border-radius: 999px;
+    margin-top: 2rem;
 }
 
 .menu-card {
-    flex: 0 0 calc((100% - 3rem) / 3);
-    max-width: calc((100% - 3rem) / 3);
-    scroll-snap-align: start;
+    background: #ffffff;
+    border-radius: 2rem;
+    padding: 1.75rem;
+    box-shadow: 0 24px 60px rgba(97, 71, 123, 0.08);
+    transition: transform 0.35s ease, opacity 0.35s ease, filter 0.35s ease, max-height 0.35s ease, padding 0.35s ease, margin 0.35s ease;
+    transform-origin: center center;
+}
+
+.menu-card.hidden {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+    pointer-events: none;
+    filter: blur(2px);
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
 }
 
 @media (max-width: 980px) {
-    .menu-card {
-        flex: 0 0 calc((100% - 1.5rem) / 2);
-        max-width: calc((100% - 1.5rem) / 2);
+    .card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
 @media (max-width: 640px) {
-    .menu-card {
-        flex: 0 0 100%;
-        max-width: 100%;
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .scroll-btn {
+        display: none;
+    }
+
+    .tab-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
     }
 }
 

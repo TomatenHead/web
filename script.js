@@ -17,14 +17,17 @@ if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
 }
 
-function scrollToCategory(category) {
-    const card = Array.from(menuCards).find((item) => item.dataset.category === category);
-    if (card && menuScroll) {
-        card.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
-    }
-}
-
 const categories = ['sorbets', 'klassiker', 'specials'];
+
+function showCategory(category) {
+    menuCards.forEach((card) => {
+        if (card.dataset.category === category) {
+            card.classList.remove('hidden');
+        } else {
+            card.classList.add('hidden');
+        }
+    });
+}
 
 function switchTab(direction) {
     const activeButton = document.querySelector('.tab-btn.active');
@@ -39,20 +42,20 @@ function switchTab(direction) {
     const newButton = document.querySelector(`.tab-btn[data-category="${newCategory}"]`);
     if (newButton) {
         newButton.classList.add('active');
-        scrollToCategory(newCategory);
+        showCategory(newCategory);
     }
 }
 
 if (tabButtons.length && menuCards.length) {
     const activeButton = document.querySelector('.tab-btn.active');
     const initialCategory = activeButton ? activeButton.dataset.category : 'sorbets';
-    scrollToCategory(initialCategory);
+    showCategory(initialCategory);
 
     tabButtons.forEach((button) => {
         button.addEventListener('click', () => {
             tabButtons.forEach((btn) => btn.classList.remove('active'));
             button.classList.add('active');
-            scrollToCategory(button.dataset.category);
+            showCategory(button.dataset.category);
         });
     });
 }
