@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eiszauber</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="#home" class="brand">Eiszauber<span class="dot">.</span></a>
+            <button class="nav-toggle" aria-label="Navigation öffnen">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="site-nav">
+                <a href="#home">Home</a>
+                <a href="#menu">Sortiment</a>
+                <a href="#about">Über uns</a>
+                <a href="#contact">Kontakt</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero-section">
+            <div class="container hero-content">
+                <p class="eyebrow">Handgemachtes Eis</p>
+                <h1>Zauberhafte Eiscreme für süße Momente.</h1>
+                <p>Genieße frische Kreationen, bunte Toppings und gemütliches Flair in unserer Eisdiele.</p>
+                <div class="hero-actions">
+                    <a href="#menu" class="btn btn-primary">Sortiment entdecken</a>
+                    <a href="#contact" class="btn btn-secondary">Kontakt</a>
+                </div>
+                <div class="hero-visual">
+                    <img src="images/hero-ice-cream.svg" alt="Illustration eines Eisbechers" />
+                </div>
+            </div>
+        </section>
+
+        <section id="menu" class="section bg-light">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Unsere Klassiker</p>
+                    <h2>Lieblingssorten</h2>
+                    <p>Sanfte Aromen, fruchtige Sorten und kreative Kombinationen für jeden Geschmack.</p>
+                    <div class="tab-group" role="tablist" aria-label="Eis-Sortiment Kategorien">
+                        <button class="tab-btn active" data-category="sorbets" type="button">Sorbets</button>
+                        <button class="tab-btn" data-category="klassiker" type="button">Klassiker</button>
+                        <button class="tab-btn" data-category="specials" type="button">Spezial</button>
+                    </div>
+                </div>
+                <div class="scroll-container">
+                    <button class="scroll-btn scroll-btn-left" type="button" aria-label="Links scrollen">←</button>
+                    <div class="card-grid scrollable" id="menuCards">
+                        <article class="menu-card" data-category="sorbets">
+                            <img class="menu-card-image" src="images/menu-ice-cup.svg" alt="Himbeer-Sorbet" />
+                            <h3>Himbeer-Sorbet</h3>
+                            <p>Erfrischendes Sorbet aus sonnengereiften Himbeeren und frischer Minze.</p>
+                            <span>€4,50</span>
+                        </article>
+                        <article class="menu-card" data-category="klassiker">
+                            <img class="menu-card-image" src="images/menu-ice-cup.svg" alt="Vanille-Trüffel" />
+                            <h3>Vanille-Trüffel</h3>
+                            <p>Cremiges Bourbon-Vanilleeis mit zarten Schokostückchen.</p>
+                            <span>€4,90</span>
+                        </article>
+                        <article class="menu-card" data-category="specials">
+                            <img class="menu-card-image" src="images/menu-ice-cup.svg" alt="Salted Caramel" />
+                            <h3>Salted Caramel</h3>
+                            <p>Reichhaltiges Karamelleis mit einem Hauch Meersalz.</p>
+                            <span>€5,20</span>
+                        </article>
+                        <article class="menu-card" data-category="sorbets">
+                            <img class="menu-card-image" src="images/menu-ice-cup.svg" alt="Zitrone-Maracuja" />
+                            <h3>Zitrone-Maracuja</h3>
+                            <p>Spritziges Sorbet mit sonniger Maracuja und frischer Zitrone.</p>
+                            <span>€4,80</span>
+                        </article>
+                        <article class="menu-card" data-category="klassiker">
+                            <img class="menu-card-image" src="images/menu-ice-cup.svg" alt="Schokolade Deluxe" />
+                            <h3>Schokolade Deluxe</h3>
+                            <p>Intensives Schokoladeneis mit Stücken dunkler Schokolade.</p>
+                            <span>€5,00</span>
+                        </article>
+                        <article class="menu-card" data-category="specials">
+                            <img class="menu-card-image" src="images/menu-ice-cup.svg" alt="Erdbeer-Crunch" />
+                            <h3>Erdbeer-Crunch</h3>
+                            <p>Fruchtiges Erdbeereis mit knusprigen Keksstückchen und Sahne.</p>
+                            <span>€5,40</span>
+                        </article>
+                    </div>
+                    <button class="scroll-btn scroll-btn-right" type="button" aria-label="Rechts scrollen">→</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container about-grid">
+                <div>
+                    <p class="eyebrow">Über uns</p>
+                    <h2>Die Eisdiele für Lieblingsgeschichten.</h2>
+                    <p>Bei Eiszauber verbinden wir frische Zutaten mit liebevoller Handarbeit. Jede Portion wird mit
+                        einem Lächeln serviert.</p>
+                    <ul>
+                        <li>Natürliche Zutaten</li>
+                        <li>Wöchentlich neue Spezialitäten</li>
+                        <li>Gemütliches Ambiente drinnen und draußen</li>
+                    </ul>
+                </div>
+                <div class="about-card">
+                    <p class="about-card-title">Unser Versprechen</p>
+                    <p>Wir stehen für unvergleichlichen Genuss: frisch, fruchtig und voller Liebe zubereitet.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="contact" class="section">
+            <div class="container contact-grid">
+                <div>
+                    <p class="eyebrow">Kontakt</p>
+                    <h2>Wir freuen uns auf dich.</h2>
+                    <p>Komm vorbei oder schreibe uns für Fragen zu Veranstaltungen und Sonderbestellungen.</p>
+                    <div class="contact-image-wrap">
+                        <img class="contact-image" src="images/contact-shop.svg" alt="Eisdiele von außen" />
+                    </div>
+                    <address>
+                        <strong>Eiszauber</strong><br />
+                        Eiskönigstraße 12<br />
+                        10115 Berlin<br />
+                        <a href="tel:+493012345678">030 123 456 78</a><br />
+                        <a href="mailto:kontakt@eiszauber.de">kontakt@eiszauber.de</a>
+                    </address>
+                </div>
+                <div class="contact-card">
+                    <p class="contact-card-title">Öffnungszeiten</p>
+                    <p>Mo–Fr: 12–21 Uhr<br />Sa–So: 11–22 Uhr</p>
+                    <p><strong>Perfekt für heiße Tage.</strong></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>© <span id="current-year"></span> Eiszauber. Für süße Erinnerungen.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
