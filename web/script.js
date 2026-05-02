@@ -17,41 +17,54 @@ if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
 }
 
-function scrollToCategory(category) {
-    const card = Array.from(menuCards).find((item) => item.dataset.category === category);
-    if (card && menuScroll) {
-        card.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+const categories = ['sorbets', 'klassiker', 'specials'];
+
+function showCategory(category) {
+    menuCards.forEach((card) => {
+        if (card.dataset.category === category) {
+            card.classList.remove('hidden');
+        } else {
+            card.classList.add('hidden');
+        }
+    });
+}
+
+function switchTab(direction) {
+    const activeButton = document.querySelector('.tab-btn.active');
+    if (!activeButton) return;
+    const currentIndex = categories.indexOf(activeButton.dataset.category);
+    if (currentIndex === -1) return;
+    let newIndex = currentIndex + direction;
+    if (newIndex < 0) newIndex = categories.length - 1;
+    if (newIndex >= categories.length) newIndex = 0;
+    const newCategory = categories[newIndex];
+    tabButtons.forEach((btn) => btn.classList.remove('active'));
+    const newButton = document.querySelector(`.tab-btn[data-category="${newCategory}"]`);
+    if (newButton) {
+        newButton.classList.add('active');
+        showCategory(newCategory);
     }
 }
 
 if (tabButtons.length && menuCards.length) {
     const activeButton = document.querySelector('.tab-btn.active');
     const initialCategory = activeButton ? activeButton.dataset.category : 'sorbets';
-    scrollToCategory(initialCategory);
+    showCategory(initialCategory);
 
     tabButtons.forEach((button) => {
         button.addEventListener('click', () => {
             tabButtons.forEach((btn) => btn.classList.remove('active'));
             button.classList.add('active');
-            scrollToCategory(button.dataset.category);
+            showCategory(button.dataset.category);
         });
     });
 }
 
-function scrollMenu(direction) {
-    if (!menuScroll || menuCards.length === 0) return;
-    const cardStyle = window.getComputedStyle(menuCards[0]);
-    const cardWidth = menuCards[0].offsetWidth;
-    const gap = parseFloat(cardStyle.marginRight || '0') || 24;
-    const distance = (cardWidth + gap) * 3;
-    menuScroll.scrollBy({ left: distance * direction, behavior: 'smooth' });
-}
-
 if (scrollLeftBtn) {
-    scrollLeftBtn.addEventListener('click', () => scrollMenu(-1));
+    scrollLeftBtn.addEventListener('click', () => switchTab(-1));
 }
 
 if (scrollRightBtn) {
-    scrollRightBtn.addEventListener('click', () => scrollMenu(1));
+    scrollRightBtn.addEventListener('click', () => switchTab(1));
 }
 
